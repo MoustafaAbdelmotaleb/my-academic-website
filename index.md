@@ -1,83 +1,55 @@
+---
+layout: default
+---
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mostafa Abdelmotaleb - Academic Website</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      padding: 0;
-      margin: 0;
-      background: linear-gradient(to right, #e0f7fa, #f1f8e9);
-      color: #1e293b;
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      line-height: 1.6; 
+      padding: 0; 
+      margin: 0; 
+      background: #f0f4f8; 
+      color: #1e293b; 
     }
 
     header {
-      text-align: center;
-      padding: 50px 20px;
-      background: #00796b;
+      background: linear-gradient(135deg, #0d9488, #2563eb);
       color: white;
+      padding: 40px 20px;
+      text-align: center;
     }
 
     header img {
       width: 180px;
       border-radius: 50%;
-      border: 3px solid #fff;
       margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
-    header h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-
-    section {
-      background-color: white;
-      padding: 25px;
-      margin: 20px auto;
-      max-width: 900px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-
-    h2 {
-      color: #00796b;
-      border-bottom: 2px solid #00796b;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    a {
-      color: #00796b;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    h1 { font-size: 2.5em; margin: 10px 0; }
+    h2 { color: #2563eb; margin-top: 30px; border-bottom: 2px solid #2563eb; display: inline-block; padding-bottom: 5px; }
+    p { font-size: 1.1em; margin: 10px 0 20px; }
+    ul { list-style-type: square; padding-left: 20px; }
 
     nav {
-      background-color: #00796b;
+      background: white;
       padding: 10px 0;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
+      display: inline-flex;
     }
 
     nav ul li {
@@ -85,29 +57,53 @@
     }
 
     nav ul li a {
-      color: white;
+      color: #2563eb;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1.1em;
+    }
+
+    nav ul li a.active {
+      text-decoration: underline;
     }
 
     nav ul li a:hover {
-      text-decoration: underline;
+      color: #0d9488;
+    }
+
+    section { 
+      margin: 30px auto; 
+      max-width: 800px; 
+      background: #fff; 
+      padding: 20px; 
+      border-radius: 12px; 
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08); 
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
   </style>
 </head>
 
-<body>{% include navbar.html %}
-  <!-- Profile Photo -->
-  <img src="profile.jpg" alt="Mostafa Abdelmotaleb" style="width:180px; border-radius:50%; margin-bottom:15px; display:block; margin-left:auto; margin-right:auto;">
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Main Heading -->
-  <h1 style="text-align:center;">Mostafa Abdelmotaleb</h1>
+  <header id="home">
+    <img src="profile.jpg" alt="Mostafa Abdelmotaleb">
+    <h1>Mostafa Abdelmotaleb</h1>
+    <p>Assistant Professor in Organizational and Social Psychology, HRM Department, Rabat Business School, Morocco. AACSB accredited.</p>
+  </header>
 
-  <!-- Introduction -->
-  <p style="text-align:center;">Assistant Professor in Organizational and Social Psychology, HRM Department, Rabat Business School, Morocco. AACSB accredited.</p>
-
-  <!-- Research Interests -->
-  <section>
+  <section id="research">
     <h2>Research Interests</h2>
     <ul>
       <li>Corporate Social Responsibility (CSR)</li>
@@ -116,8 +112,7 @@
     </ul>
   </section>
 
-  <!-- Contact -->
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <p>Email: <a href="mailto:mostafa@univ.ma">mostafa@univ.ma</a></p>
     <p>CV: <a href="REPLACE_WITH_CV_URL" target="_blank">Download PDF</a></p>
